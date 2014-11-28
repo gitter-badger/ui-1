@@ -10,13 +10,21 @@ var paths = {
   'css': 'dist/**/*.css'
 };
 
+var vendors = ['bower_components/jquery/dist/jquery.min.js'];
+
+var serve = {
+  'css': 'public',
+  'js': 'public',
+  'vendor': 'public/vendor'
+};
+
 var dest = {
   'css': 'dist/',
 };
 
 gulp.task('serve', function(){
   connect.server({
-    root: ['/'],
+    root: ['public'],
     livereload: true
   });
 });
@@ -26,7 +34,13 @@ gulp.task('styles', function(){
     .pipe(sass())
     .pipe(autoprefix())
     .pipe(rename('cachet.css'))
-    .pipe(gulp.dest(dest.css))
+    .pipe(gulp.dest(serve.css))
+    .pipe(connect.reload());
+});
+
+gulp.task('vendor', function(){
+  return gulp.src(vendors)
+    .pipe(gulp.dest(serve.vendor))
     .pipe(connect.reload());
 });
 
@@ -34,10 +48,12 @@ gulp.task('watch', function(){
   gulp.watch([paths.scss], ['styles']);
 });
 
-gulp.task('default', ['serve', 'watch']);
+gulp.task('default', ['styles','vendor','serve', 'watch']);
 
 gulp.task('build', function(){
-  return gulp.src(paths.css)
+  return gulp.src(paths.scss)
+    .pipe(sass())
+    .pipe(autoprefix())
     .pipe(minifyCSS({
       keepSpecialComments: 0
     }))

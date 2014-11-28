@@ -1,3 +1,34 @@
-body {
-	background: grey;
-}
+/********************
+
+	Cachet UI
+	-> Design Framework Manifest
+
+*********************/
+
+/********************
+	Foundation
+	-> Not the Zurb kind
+********************/
+
+@import 'foundation/reset';
+@import 'foundation/helpers';
+@import 'foundation/config';
+@import 'foundation/base';
+
+
+/*********************
+	Components
+	-> Reusable modules of style that makes up the styleguide
+*********************/
+
+/********************
+	Vendor
+	-> External style libraries
+********************/
+
+@import '../../bower_components/fontawesome/scss/font-awesome.scss';
+
+/********************
+	Inbox
+	-> Temporary styles for quick fixes and testing
+********************/
