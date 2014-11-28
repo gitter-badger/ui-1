@@ -12,6 +12,19 @@
 $helvetica: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $base-font-family: $helvetica;
 
+// Font Sizes
+$base-font-size: 1em;
+$h1-font-size: $base-font-size * 2.25;
+$h2-font-size: $base-font-size * 2;
+$h3-font-size: $base-font-size * 1.75;
+$h4-font-size: $base-font-size * 1.5;
+$h5-font-size: $base-font-size * 1.25;
+$h6-font-size: $base-font-size;
+
+// Line height
+$base-line-height: 1.5;
+$header-line-height: 1.25;
+
 /**************
   Colors
   -> Based off of Google's Material Design palettes, Main = 800
@@ -25,6 +38,23 @@ $purple: #5E35B1;
 $red: #C62828;
 $white: #FFFFFF;
 
+// Background
+$base-background-color: $white;
+
+// Font
+
+
+// Links
+
+
+// Border
+
 /*************
   Base
 *************/
+
+$base-border-radius: 2px;
+$base-spacing: $base-line-height * 1em;
+$base-z-index: 0;
+
+$max-width: em(1200px);
