@@ -32,6 +32,7 @@ $header-line-height: 1.25;
 
 // Palette
 $amber: #FF8F00;
+$black: #999999;
 $green: #43A047;
 $light-blue: #0277BD;
 $purple: #5E35B1;
@@ -41,13 +42,24 @@ $white: #FFFFFF;
 // Background
 $base-background-color: $white;
 
-// Font
+// Border
+$base-border-color: $black;
 
+// Button
+$button-default-color: $white;
+$button-info-color: $purple;
+$button-primary-color: $light-blue;
+$button-warning-color: $red;
+$button-danger-color: $amber;
+$button-leaf-color: $green;
+
+// Font
+$base-font-color: $black;
 
 // Links
+$base-link-color: $light-blue;
+$hover-link-color: lighten($base-link-color, 10%);
 
-
-// Border
 
 /*************
   Base
