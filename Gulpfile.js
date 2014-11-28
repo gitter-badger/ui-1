@@ -1,42 +1,46 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefix = require('gulp-autoprefixer');
-var blade = require('gulp-blade');
 var connect = require('gulp-connect');
+var rename = require('gulp-rename');
+var minifyCSS = require('gulp-minify-css');
+
+var paths = {
+  'scss': 'src/sass/**/*.scss',
+  'css': 'dist/**/*.css'
+};
+
+var dest = {
+  'css': 'dist/',
+};
 
 gulp.task('serve', function(){
-  'use strict';
-
   connect.server({
-    root: ['public'],
+    root: ['/'],
     livereload: true
   });
 });
 
 gulp.task('styles', function(){
-  'use strict';
-
-  gulp.src('sass/style.scss')
-      .pipe(sass())
-      .pipe(autoprefix())
-      .pipe(gulp.dest('public'))
-      .pipe(connect.reload());
-});
-
-gulp.task('components', function(){
-  'use strict';
-
-  gulp.src('components/*.blade')
-      .pipe(blade())
-      .pipe(gulp.dest('public'))
-      .pipe(connect.reload());
+  return gulp.src(paths.scss)
+    .pipe(sass())
+    .pipe(autoprefix())
+    .pipe(rename('cachet.css'))
+    .pipe(gulp.dest(dest.css))
+    .pipe(connect.reload());
 });
 
 gulp.task('watch', function(){
-  'use strict';
-
-  gulp.watch(['sass/**'], ['styles']);
-  gulp.watch(['components/**'], ['components']);
+  gulp.watch([paths.scss], ['styles']);
 });
 
 gulp.task('default', ['serve', 'watch']);
+
+gulp.task('build', function(){
+  return gulp.src(paths.css)
+    .pipe(minifyCSS({
+      keepSpecialComments: 0
+    }))
+    .pipe(rename('cachet.min.css'))
+    .pipe(gulp.dest(dest.css));
+});
