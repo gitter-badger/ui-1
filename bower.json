@@ -1,7 +1,7 @@
 {
     "name": "cachet-ui",
     "description": "Custom style resources for the Cachet application",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "homepage": "http://cachethq.github.io",
     "repository": {
         "type": "git",

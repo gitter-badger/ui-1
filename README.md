@@ -2,15 +2,15 @@
 
 The custom UI framework for use in building Cachet.
 
-Install node modules for Gulp to use:
+Uses [Harp](http://harpjs.com/) to preprocess code and build static pages.
 
 ```bash
-$ npm install
+$ [sudo] npm install -g harp
 ```
 
 
-Start the Gulp watch and build:
+Start the Harp server and build:
 
 ```bash
-$ gulp
+$ harp server
 ```
