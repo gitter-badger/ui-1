@@ -6,7 +6,7 @@ var rename = require('gulp-rename');
 var minifyCSS = require('gulp-minify-css');
 
 var paths = {
-  'html': ['public/*.html', 'public/**/*.html'],
+  'html': ['public/**/*.html'],
   'scss': {
     'all': ['src/sass/*.scss','src/sass/**/*.scss'],
     'main': 'src/sass/main.scss'
@@ -78,5 +78,14 @@ gulp.task('build', function(){
       keepSpecialComments: 0
     }))
     .pipe(rename('cachet.min.css'))
+    .pipe(gulp.dest(dest.css));
+});
+
+gulp.task('build-grid', function(){
+  return gulp.src('bower_components/csswizardry-grids/csswizardry-grids.scss')
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }))
+    .pipe(rename('cachet.layout.css'))
     .pipe(gulp.dest(dest.css));
 });

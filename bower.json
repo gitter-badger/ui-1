@@ -1,23 +1,24 @@
 {
-    "name": "cachet-ui",
-    "description": "Custom style resources for the Cachet application",
-    "version": "0.1.0",
-    "homepage": "http://cachethq.github.io",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/cachethq/ui.git"
-    },
-    "license": "MIT",
-    "dependencies": {
-        "fontawesome": "4.2.*"
-    },
-    "devDependencies": {
-        "jquery": "~2.1.*",
-    },
-    "main": [
-        "dist/**.**",
-        "LICENSE",
-        "bower.json",
-        "README.md"
-    ]
+  "name": "cachet-ui",
+  "description": "Custom style resources for the Cachet application",
+  "version": "0.1.0",
+  "homepage": "http://cachethq.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cachethq/ui.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "fontawesome": "4.2.*"
+  },
+  "devDependencies": {
+    "jquery": "~2.1.*",
+    "csswizardry-grids": "~2.2.0"
+  },
+  "main": [
+    "dist/**.**",
+    "LICENSE",
+    "bower.json",
+    "README.md"
+  ]
 }

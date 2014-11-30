@@ -5,6 +5,22 @@
 
 *********************/
 
+$use-grid: true;
+
+/********************
+	Vendor
+	-> External style libraries
+********************/
+
+@import '../../bower_components/fontawesome/scss/font-awesome.scss';
+
+@if ($use-grid == true) {
+	// Grid Settings
+	$use-silent-classes: true;
+	$pull: true;
+	@import '../../bower_components/csswizardry-grids/csswizardry-grids.scss';
+}
+
 /********************
 	Foundation
 	-> Not the Zurb kind
@@ -16,6 +32,7 @@
 @import 'foundation/base';
 
 
+
 /*********************
 	Components
 	-> Reusable modules of style that makes up the styleguide
@@ -24,13 +41,6 @@
 // Button Styles
 @import 'components/buttons';
 
-
-/********************
-	Vendor
-	-> External style libraries
-********************/
-
-@import '../../bower_components/fontawesome/scss/font-awesome.scss';
 
 /********************
 	Inbox
