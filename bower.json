@@ -9,11 +9,15 @@
     },
     "license": "MIT",
     "dependencies": {
-        "jquery": "~2.1.1",
-        "bootstrap": "3.3.*",
         "fontawesome": "4.2.*"
     },
+    "devDependencies": {
+        "jquery": "~2.1.*",
+    },
     "main": {
-
+        "dist/**.**",
+        "LICENSE",
+        "bower.json",
+        "README.md"
     }
 }
