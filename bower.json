@@ -14,10 +14,10 @@
     "devDependencies": {
         "jquery": "~2.1.*",
     },
-    "main": {
+    "main": [
         "dist/**.**",
         "LICENSE",
         "bower.json",
         "README.md"
-    }
+    ]
 }
