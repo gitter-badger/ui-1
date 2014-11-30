@@ -13,6 +13,7 @@ $helvetica: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $base-font-family: $helvetica;
 
 // Font Sizes
+$em-base: 12px;
 $base-font-size: 1em;
 $h1-font-size: $base-font-size * 2.25;
 $h2-font-size: $base-font-size * 2;
@@ -32,7 +33,9 @@ $header-line-height: 1.25;
 
 // Palette
 $amber: #FF8F00;
-$black: #999999;
+$black: #666666;
+$dark-grey: #7b7e80;
+$grey: #F5f5f5; // Grey 100
 $green: #43A047;
 $light-blue: #0277BD;
 $purple: #5E35B1;
@@ -40,7 +43,7 @@ $red: #C62828;
 $white: #FFFFFF;
 
 // Background
-$base-background-color: $white;
+$base-background-color: $grey;
 
 // Border
 $base-border-color: $black;
@@ -49,12 +52,13 @@ $base-border-color: $black;
 $button-default-color: $white;
 $button-info-color: $purple;
 $button-primary-color: $light-blue;
-$button-warning-color: $red;
-$button-danger-color: $amber;
-$button-leaf-color: $green;
+$button-error-color: $red;
+$button-warning-color: $amber;
+$button-success-color: $green;
 
 // Font
-$base-font-color: $black;
+$base-font-color: $dark-grey;
+$invert-font-color: $white;
 
 // Links
 $base-link-color: $light-blue;
@@ -65,6 +69,8 @@ $hover-link-color: lighten($base-link-color, 10%);
   Base
 *************/
 
+$base-border: 1px;
+$base-border-color: $dark-grey;
 $base-border-radius: 2px;
 $base-spacing: $base-line-height * 1em;
 $base-z-index: 0;

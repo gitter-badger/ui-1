@@ -8,6 +8,11 @@
 /*****************
   Functions
 *****************/
+// Strips the units from a value. e.g. 12px -> 12
+
+@function strip-units($val) {
+  @return ($val / ($val * 0 + 1));
+}
 
 // Convert pixels to ems
 // eg. for a relational value of 12px write em(12) when the parent is 16px
@@ -154,6 +159,31 @@
     border-style: solid;
     border-color: $background-color $foreground-color $background-color $background-color;
   }
+}
+
+// Helper mixin to easily theme buttons, including state styles.
+
+@mixin theme-button($color) {
+  background-color: $color;
+  border-color: $color;
+
+  // $lightness: strip-units(lightness($color));
+  // @warn "Color lightness: #{$lightness}";
+  // Set font color based on the lightness of the background
+  @if (strip-units(lightness($color)) < 30) {
+    color: $base-font-color;
+  } @else {
+    color: $invert-font-color;
+  }
+
+  &:hover, &:focus {
+    background-color: darken($color, 10%);
+  }
+
+  &:active {
+    background-color: $color;
+  }
+
 }
 
 /*****************

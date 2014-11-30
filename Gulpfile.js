@@ -6,7 +6,11 @@ var rename = require('gulp-rename');
 var minifyCSS = require('gulp-minify-css');
 
 var paths = {
-  'scss': 'src/sass/main.scss',
+  'html': ['public/*.html', 'public/**/*.html'],
+  'scss': {
+    'all': ['src/sass/*.scss','src/sass/**/*.scss'],
+    'main': 'src/sass/main.scss'
+  },
   'css': 'dist/**/*.css'
 };
 
@@ -33,9 +37,14 @@ gulp.task('serve', function(){
   });
 });
 
+gulp.task('html', function(){
+  return gulp.src(paths.html)
+    .pipe(connect.reload());
+});
+
 // Compiles the main.scss file and places it in the root of the public folder
 gulp.task('styles', function(){
-  return gulp.src(paths.scss)
+  return gulp.src(paths.scss.main)
     .pipe(sass())
     .pipe(autoprefix())
     .pipe(rename('cachet.css'))
@@ -52,7 +61,8 @@ gulp.task('vendor', function(){
 
 // Watches specified files for use in livereload
 gulp.task('watch', function(){
-  gulp.watch([paths.scss], ['styles']);
+  gulp.watch(paths.html, ['html']);
+  gulp.watch(paths.scss.all, ['styles']);
 });
 
 // Default task, compiles styles, serves vendor, starts server, and starts watch.
