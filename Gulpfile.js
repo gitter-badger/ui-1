@@ -71,7 +71,7 @@ gulp.task('default', ['styles','vendor','serve', 'watch']);
 
 // Build task compiles styles, minimizes the file, renames it, and places it in the dist folder.
 gulp.task('build', function(){
-    return gulp.src(paths.scss)
+    return gulp.src(paths.scss.all)
         .pipe(sass())
         .pipe(autoprefix())
         .pipe(minifyCSS({

@@ -26,7 +26,7 @@ $use-grid: true;
 	-> Not the Zurb kind
 ********************/
 
-@import 'foundation/reset';
+@import '../../bower_components/normalize.css/normalize.css';
 @import 'foundation/helpers';
 @import 'foundation/config';
 @import 'foundation/base';

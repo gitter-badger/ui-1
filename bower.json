@@ -13,7 +13,8 @@
   },
   "devDependencies": {
     "jquery": "~2.1.*",
-    "csswizardry-grids": "~2.2.0"
+    "csswizardry-grids": "~2.2.0",
+    "normalize.css": "3.0.2"
   },
   "main": [
     "dist/**.**",
