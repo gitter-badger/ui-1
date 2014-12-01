@@ -8,11 +8,8 @@ Install node modules for Gulp to use:
 $ npm install
 ```
 
-
 Start the Gulp watch and build:
 
 ```bash
 $ gulp
 ```
-
----
